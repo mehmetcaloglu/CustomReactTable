@@ -1,0 +1,372 @@
+{
+    "_embedded": {
+        "events": [
+            {
+                // we will show on the table the event name  -EventName
+                "name": "Haydaa Mehmet Mayda",
+                "type": "event",
+                // put on the model --Id
+                "id": "Z2HyzZyMZd9xv7vve",
+                "test": false,
+                "url": "https://www.biletix.com/performance/2MX03/001/TURKIYE/tr",
+                "locale": "en-us",
+                "images": [
+                    {
+                        "ratio": "16_9",
+                        "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_RETINA_PORTRAIT_16_9.jpg",
+                        "width": 640,
+                        "height": 360,
+                        "fallback": true
+                    },
+                    
+                    {
+                        "ratio": "16_9",
+                        "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_16_9.jpg",
+                        "width": 1024,
+                        "height": 576,
+                        "fallback": true
+                    },
+                    {
+                        "ratio": "3_2",
+                        "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_3_2.jpg",
+                        "width": 1024,
+                        "height": 683,
+                        "fallback": true
+                    }
+                ],
+                "sales": {
+                    "public": {
+                        // we sill show on the table sales start time  -SalesStartTime -SalesEndTime
+                        "startDateTime": "2023-12-29T07:39:00Z",
+                        "startTBD": false,
+                        "startTBA": false,
+                        "endDateTime": "2024-12-31T16:00:00Z"
+                    }
+                },
+                "dates": {
+                    // we sill show on the table event start time -EventStartTime
+                    "start": {
+                        "localDate": "2024-12-31",
+                        "localTime": "19:00:00",
+                        "dateTime": "2024-12-31T16:00:00Z",
+                        "dateTBD": false,
+                        "dateTBA": false,
+                        "timeTBA": false,
+                        "noSpecificTime": false
+                    },
+                    "timezone": "Europe/Istanbul",
+                    "status": {
+                        // biletler satıştamı değil mi göstericez -IsOnSale
+                        "code": "onsale"
+                    },
+                    "spanMultipleDays": false
+                },
+                "classifications": [
+                    {
+                        "primary": true,
+                        "segment": {
+                            "id": "KZFzniwnSyZfZ7v7na",
+                            // tür olarak da gösterelim -Class
+                            "name": "Arts & Theatre"
+                        },
+                        "genre": {
+                            "id": "KnvZfZ7vAe1",
+                            // we will show on the table event genre -Type
+                            "name": "Comedy"
+                        },
+                        "family": false
+                    }
+                ],
+                
+                "_embedded": {
+                    "venues": [
+                        {
+                            // we sill show on the table event location and city name -Location -CityName
+                            "name": "Efsahne Beyoğlu",
+                            "type": "venue",
+                            "id": "ZaHyzZyMZQp",
+                            "test": false,
+                            "url": "https://www.biletix.com/mekan/PL/TURKIYE/tr",
+                            "locale": "en-us",
+                            "timezone": "Europe/Istanbul",
+                            "city": {
+                                "name": "İstanbul"
+                            },
+                            "country": {
+                                "name": "Turkey",
+                                "countryCode": "TR"
+                            },
+                            "address": {
+                                "line1": "İstiklal Cadddesi. Sadri Alışık Sok. Kuloglu Mah. No: 24/3"
+                            },
+                            "location": {
+                                "longitude": "28.98108198430659",
+                                "latitude": "41.03428612425684"
+                            },
+                            "markets": [
+                                {
+                                    "name": "Turkey",
+                                    "id": "600"
+                                }
+                            ],
+                            "dmas": [
+                                {
+                                    "id": 613
+                                }
+                            ],
+                            "upcomingEvents": {
+                                "wts-tr": 1,
+                                "_total": 1,
+                                "_filtered": 0
+                            },
+                            "_links": {
+                                "self": {
+                                    "href": "/discovery/v2/venues/ZaHyzZyMZQp?locale=en-us"
+                                }
+                            }
+                        }
+                    ],
+                    "attractions": [
+                        {
+                            "name": "Mehmet Mayda", -
+                            "type": "attraction",
+                            "id": "Z6HyzZyMZ1k8ZaV_o",
+                            "test": false,
+                            "locale": "en-us",
+                            "images": [
+                                {
+                                    "ratio": "16_9",
+                                    "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_RETINA_PORTRAIT_16_9.jpg",
+                                    "width": 640,
+                                    "height": 360,
+                                    "fallback": true
+                                },
+                                {
+                                    "ratio": "16_9",
+                                    "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_EVENT_DETAIL_PAGE_16_9.jpg",
+                                    "width": 205,
+                                    "height": 115,
+                                    "fallback": true
+                                },
+                               
+                            ],
+                            "classifications": [
+                                {
+                                    "primary": true,
+                                    "segment": {
+                                        "id": "KZFzniwnSyZfZ7v7na",
+                                        "name": "Arts & Theatre"
+                                    },
+                                    "genre": {
+                                        "id": "KnvZfZ7vAe1",
+                                        "name": "Comedy"
+                                    },
+                                    "family": false
+                                }
+                            ],
+                            "upcomingEvents": {
+                                "wts-tr": 1,
+                                "_total": 1,
+                                "_filtered": 0
+                            },
+                            "_links": {
+                                "self": {
+                                    "href": "/discovery/v2/attractions/Z6HyzZyMZ1k8ZaV_o?locale=en-us"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                // we will show on the table the event name  -EventName
+                "name": "Haydaa Mehmet Mayda",
+                "type": "event",
+                // put on the model --Id
+                "id": "Z2HyzZyMZd9xv7vve",
+                "test": false,
+                "url": "https://www.biletix.com/performance/2MX03/001/TURKIYE/tr",
+                "locale": "en-us",
+                "images": [
+                    {
+                        "ratio": "16_9",
+                        "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_RETINA_PORTRAIT_16_9.jpg",
+                        "width": 640,
+                        "height": 360,
+                        "fallback": true
+                    },
+                    
+                    {
+                        "ratio": "16_9",
+                        "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_16_9.jpg",
+                        "width": 1024,
+                        "height": 576,
+                        "fallback": true
+                    },
+                    {
+                        "ratio": "3_2",
+                        "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_TABLET_LANDSCAPE_3_2.jpg",
+                        "width": 1024,
+                        "height": 683,
+                        "fallback": true
+                    }
+                ],
+                "sales": {
+                    "public": {
+                        // we sill show on the table sales start time  -SalesStartTime -SalesEndTime
+                        "startDateTime": "2023-12-29T07:39:00Z",
+                        "startTBD": false,
+                        "startTBA": false,
+                        "endDateTime": "2024-12-31T16:00:00Z"
+                    }
+                },
+                "dates": {
+                    // we sill show on the table event start time -EventStartTime
+                    "start": {
+                        "localDate": "2024-12-31",
+                        "localTime": "19:00:00",
+                        "dateTime": "2024-12-31T16:00:00Z",
+                        "dateTBD": false,
+                        "dateTBA": false,
+                        "timeTBA": false,
+                        "noSpecificTime": false
+                    },
+                    "timezone": "Europe/Istanbul",
+                    "status": {
+                        // biletler satıştamı değil mi göstericez -IsOnSale
+                        "code": "onsale"
+                    },
+                    "spanMultipleDays": false
+                },
+                "classifications": [
+                    {
+                        "primary": true,
+                        "segment": {
+                            "id": "KZFzniwnSyZfZ7v7na",
+                            // tür olarak da gösterelim -Class
+                            "name": "Arts & Theatre"
+                        },
+                        "genre": {
+                            "id": "KnvZfZ7vAe1",
+                            // we will show on the table event genre -Type
+                            "name": "Comedy"
+                        },
+                        "family": false
+                    }
+                ],
+                
+                "_embedded": {
+                    "venues": [
+                        {
+                            // we sill show on the table event location and city name -Location -CityName
+                            "name": "Efsahne Beyoğlu",
+                            "type": "venue",
+                            "id": "ZaHyzZyMZQp",
+                            "test": false,
+                            "url": "https://www.biletix.com/mekan/PL/TURKIYE/tr",
+                            "locale": "en-us",
+                            "timezone": "Europe/Istanbul",
+                            "city": {
+                                "name": "İstanbul"
+                            },
+                            "country": {
+                                "name": "Turkey",
+                                "countryCode": "TR"
+                            },
+                            "address": {
+                                "line1": "İstiklal Cadddesi. Sadri Alışık Sok. Kuloglu Mah. No: 24/3"
+                            },
+                            "location": {
+                                "longitude": "28.98108198430659",
+                                "latitude": "41.03428612425684"
+                            },
+                            "markets": [
+                                {
+                                    "name": "Turkey",
+                                    "id": "600"
+                                }
+                            ],
+                            "dmas": [
+                                {
+                                    "id": 613
+                                }
+                            ],
+                            "upcomingEvents": {
+                                "wts-tr": 1,
+                                "_total": 1,
+                                "_filtered": 0
+                            },
+                            "_links": {
+                                "self": {
+                                    "href": "/discovery/v2/venues/ZaHyzZyMZQp?locale=en-us"
+                                }
+                            }
+                        }
+                    ],
+                    "attractions": [
+                        {
+                            "name": "Mehmet Mayda", -
+                            "type": "attraction",
+                            "id": "Z6HyzZyMZ1k8ZaV_o",
+                            "test": false,
+                            "locale": "en-us",
+                            "images": [
+                                {
+                                    "ratio": "16_9",
+                                    "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_RETINA_PORTRAIT_16_9.jpg",
+                                    "width": 640,
+                                    "height": 360,
+                                    "fallback": true
+                                },
+                                {
+                                    "ratio": "16_9",
+                                    "url": "https://s1.ticketm.net/dam/c/50a/fa9caa1f-73a1-411e-b507-ec56fa59650a_106061_EVENT_DETAIL_PAGE_16_9.jpg",
+                                    "width": 205,
+                                    "height": 115,
+                                    "fallback": true
+                                },
+                               
+                            ],
+                            "classifications": [
+                                {
+                                    "primary": true,
+                                    "segment": {
+                                        "id": "KZFzniwnSyZfZ7v7na",
+                                        "name": "Arts & Theatre"
+                                    },
+                                    "genre": {
+                                        "id": "KnvZfZ7vAe1",
+                                        "name": "Comedy"
+                                    },
+                                    "family": false
+                                }
+                            ],
+                            "upcomingEvents": {
+                                "wts-tr": 1,
+                                "_total": 1,
+                                "_filtered": 0
+                            },
+                            "_links": {
+                                "self": {
+                                    "href": "/discovery/v2/attractions/Z6HyzZyMZ1k8ZaV_o?locale=en-us"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }           
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/discovery/v2/events.json?countryCode=TR&keyword=mehmet"
+        }
+    },
+    // put on the page obj --page
+    "page": {
+        "size": 20,
+        "totalElements": 13,
+        "totalPages": 1,
+        "number": 0
+    }
+}
