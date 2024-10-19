@@ -1,7 +1,17 @@
 "use client"
-import React, { useMemo } from 'react'
+import React, { useMemo, useContext } from 'react'
+import { TableContext } from '@/app/page'
+import { FaSortUp, FaSortDown } from 'react-icons/fa' // React Icons kütüphanesini kullanıyoruz
 
-const BodyRowCell = ({ value, searchKeyword, colIndex, rowIndex, style }) => {
+
+const BodyRowCell = ({ column, colIndex, rowIndex, style, item }) => {
+
+
+    const { sortOrder, sortedColumn, searchKeyword } = useContext(TableContext)
+
+    const value = column.accessorFn(item)
+    const type = column.type
+
 
     const getBgColor = () => {
         if (rowIndex % 2 === 0 && colIndex % 2 === 0) {
@@ -14,7 +24,10 @@ const BodyRowCell = ({ value, searchKeyword, colIndex, rowIndex, style }) => {
     };
 
     const highlightText = (text, highlight) => {
-        if (!highlight.trim()) {
+        if (type === "date") {
+            return text;
+        }
+        if (!highlight || !highlight.trim()) {
             return <span>{text}</span>;
         }
 
@@ -39,9 +52,24 @@ const BodyRowCell = ({ value, searchKeyword, colIndex, rowIndex, style }) => {
         );
     };
 
+    const formatDate = (value) => {
+        const date = new Date(value)
+        return date.toLocaleString("tr-TR", { hour: '2-digit', minute: '2-digit', day: "numeric", month: "long", year: "numeric" })
+    }
+
     const highlightedText = useMemo(() => {
+        console.log("highlightText params: ", value, searchKeyword)
         return highlightText(value, searchKeyword);
     }, [value, searchKeyword]);
+
+
+
+    const renderSortIcon = () => {
+        if (column.header === sortedColumn) {
+            return sortOrder === 'asc' ? <FaSortUp className="ml-1" /> : <FaSortDown className="ml-1" />
+        }
+        return null
+    }
 
     return (
         <td className={`h-16 p-2 ${getBgColor()} align-middle`} style={style}>
@@ -50,7 +78,7 @@ const BodyRowCell = ({ value, searchKeyword, colIndex, rowIndex, style }) => {
                     className='text-center line-clamp-2 break-words'
                     title={value}
                 >
-                    {highlightedText}
+                    {type == "date" ? formatDate(value) : highlightedText}
                 </p>
             </div>
         </td>

@@ -1,7 +1,11 @@
 "use client"
-import React from 'react'
+import React, { useContext } from 'react'
+import { TableContext } from '@/app/page'
 
-const TableSearchBar = ({ searchKeyword, setSearchKeyword, className }) => {
+const TableSearchBar = () => {
+
+  const { searchKeyword, setSearchKeyword, className } = useContext(TableContext)
+
   return (
     <div className={`h-16 flex items-center ${className} my-4`}>
       <div className="relative w-full max-w-[300px]">

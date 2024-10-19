@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import BodyRow from './BodyRow/BodyRow'
+import { TableContext } from '@/app/page'
 
-const TableBody = ({ data, columns, searchKeyword, loading, errorMessage }) => {
+const TableBody = () => {
+
+  const { data, loading, errorMessage } = useContext(TableContext)
   return (
     <tbody className='block w-full h-[calc(100vh-8rem)] overflow-y-auto'>      {
       !loading ?
@@ -9,11 +12,11 @@ const TableBody = ({ data, columns, searchKeyword, loading, errorMessage }) => {
           <tr><td colSpan="100%" className="text-center text-2xl py-4">{errorMessage}</td></tr>
           :
           data.length == 0 ?
-            <tr><td colSpan="100%" className="text-center text-2xl py-4">Verilerin gelmesi için birşeyler yazın.</td></tr>
+            <tr><td colSpan="100%" className="text-center text-2xl py-4">Write something to the search bar to see the results.</td></tr>
             :
             <>
               {data.map((item, index) => (
-                <BodyRow key={index} itemIndex={index} columns={columns} item={item} searchKeyword={searchKeyword} />
+                <BodyRow key={index} itemIndex={index} item={item} />
               ))}
               <tr className='h-20'></tr>
             </>

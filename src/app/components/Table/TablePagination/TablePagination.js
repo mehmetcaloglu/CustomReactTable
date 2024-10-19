@@ -1,15 +1,18 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo, useContext } from 'react'
+import { TableContext } from '@/app/page'
 
-const TablePagination = ({ pageSize, setPageSize, currentPageNumber, setCurrentPageNumber, totalPages, className }) => {
+const TablePagination = ({ className }) => {
 
-    const pageOptions = (totalPages) => {
+    const { totalPages, pageSize, currentPageNumber, setCurrentPageNumber, setPageSize } = useContext(TableContext)
+
+    const pageOptions = useMemo(() => {
         const options = [];
         for (let i = 1; i <= totalPages; i++) {
             options.push(i);
         }
         return options;
-    };
+    }, [totalPages]);
 
     useEffect(() => {
         console.log("scroll moruk")
@@ -19,7 +22,7 @@ const TablePagination = ({ pageSize, setPageSize, currentPageNumber, setCurrentP
             left: 0,
             behavior: 'smooth'
         });
-    }, [currentPageNumber]);
+    }, [currentPageNumber, pageSize]);
 
     return (
         <div className={`h-16 bg-[#aab7d2] shadow-md ${className}`}>
@@ -30,18 +33,19 @@ const TablePagination = ({ pageSize, setPageSize, currentPageNumber, setCurrentP
                     disabled={currentPageNumber === 1}
                     className="hidden sm:block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    Önceki
+                    Before
                 </button>
-                <span className="text-lg font-semibold hidden sm:block">
-                    Sayfa {currentPageNumber} / {totalPages || "?"}
-                </span>
                 <button
                     onClick={() => setCurrentPageNumber(currentPageNumber + 1)}
-                    disabled={currentPageNumber === totalPages}
+                    disabled={currentPageNumber >= totalPages}
                     className="hidden sm:block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    Sonraki
+                    After
                 </button>
+                <span className="text-lg font-semibold hidden sm:block">
+                    Page {currentPageNumber} / {totalPages || "?"}
+                </span>
+
 
                 {/* küçükse select */}
                 <select
