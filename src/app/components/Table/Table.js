@@ -30,7 +30,7 @@ const Table = ({
 
 
     return (
-        <div className='flex flex-col h-screen px-4 sm:px-10 w-[100vw] max-w-[1500px] mx-auto'>
+        <div className='flex flex-col h-screen  sm:px-10 w-[100vw] max-w-[1500px] '>
             <TableSearchBar
                 searchKeyword={searchKeyword}
                 setSearchKeyword={setSearchKeyword}

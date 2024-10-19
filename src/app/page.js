@@ -16,49 +16,51 @@ export default function TablePage() {
   const [loading, setLoading] = useState(false)
   const timeoutRef = useRef(null)
 
-  useEffect(() => {
-    if (!searchKeyword == "") {
-      debouncedSearch(searchKeyword)
-    }
-  }, [pageSize])
-
+  const immediateSearch = useCallback((keyword) => {
+    setLoading(true);
+    fetchData({ keyword, pageSize, currentPageNumber }).then(data => {
+      if (data) {
+        setErrorMessage(null);
+        setData(data._embedded.events);
+        setTotalPages(data.page.totalPages);
+      } else {
+        setData([]);
+        setTotalPages(0);
+        setErrorMessage("No event found. Please search something else.");
+      }
+      setLoading(false);
+    }).catch(error => {
+      setErrorMessage(error.response.data);
+      setLoading(false);
+    });
+  }, [pageSize, currentPageNumber]);
 
   const debouncedSearch = useCallback(
     (keyword) => {
       if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
+        clearTimeout(timeoutRef.current);
       }
       timeoutRef.current = setTimeout(() => {
-        setLoading(true)
-        fetchData({ keyword, pageSize, currentPageNumber }).then(data => {
-          if (data) {
-            setErrorMessage(null)
-            setData(data._embedded.events)
-            setTotalPages(data.page.totalPages)
-          }
-          else {
-            setData([])
-            setTotalPages(0)
-            setErrorMessage("No event found. Please search something else.")
-          }
-          setLoading(false)
-        });
-      }, 600)
+        immediateSearch(keyword);
+      }, 600);
     },
-    [pageSize, currentPageNumber]
-  )
-
+    [immediateSearch]
+  );
 
   useEffect(() => {
     if (searchKeyword !== "") {
-      debouncedSearch(searchKeyword)
+      immediateSearch(searchKeyword);
     }
-  }, [searchKeyword, debouncedSearch])
+  }, [pageSize, currentPageNumber, immediateSearch]);
 
-
+  useEffect(() => {
+    if (searchKeyword !== "") {
+      debouncedSearch(searchKeyword);
+    }
+  }, [searchKeyword, debouncedSearch]);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative h-screen">
       <Table
         columns={
           [
